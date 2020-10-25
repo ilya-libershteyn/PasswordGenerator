@@ -42,6 +42,7 @@ function chooseCharSets()
   // Store user selections as one character set
   var crypto = "";
   
+  // A do-while loop will ensure this code is run at least once
   do
   {  
     var lower = confirm("Should your password contain lowercase characters(a-z)?");
@@ -73,14 +74,16 @@ function chooseCharSets()
       alert("You must pick at least one character set!")
     }
   } while(crypto.length == 0);
-  console.log(crypto);
+  
   return crypto;
 }
 
+// User chooses the password length
 function choosePWLength()
 {
   var length = 0;
   
+  // A do-while loop will ensure this code is run at least once
   do
   {
     length = parseInt(prompt("What is the desired length of your password? Must be between 8 and 128"));
@@ -90,6 +93,6 @@ function choosePWLength()
       alert("You have selected an insecure password length!");
     }
   } while(length < 8 || length > 128 || !length);
-  console.log(length);
+  
   return length;
 }
